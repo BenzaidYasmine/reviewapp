@@ -26,6 +26,8 @@ function call() {
 
     //Call pour afficher le tableau
     showHeroes(reponseObject);
+   
+  
   };
 
 
@@ -35,8 +37,8 @@ function call() {
 
 function showHeroes(jsonObject) {
 
-  // alert("tableau :"+jsonObject[0].name);
-  // alert("tableau :"+jsonObject.length); // Hello, world!
+  alert("tableau :"+jsonObject[0].name);
+  // console.log("tableau :" + jsonObject); // Hello, world!
 
 
   var tbl = document.getElementsByTagName('table')[0];
@@ -73,12 +75,22 @@ function showHeroes(jsonObject) {
   }
   tbl.appendChild(tbdy);
 
-
+console.log('jsonObject: '+jsonObject[0].name)
 
 }
 
-function modifier() {
-  
+function modifierr() {
+
   document.getElementById("article").innerHTML = "Hello";
   document.getElementById('name').style.backgroundColor = 'red';
 }
+
+
+const buttonA = document.querySelector("#update");
+const headingA = document.querySelector("#name");
+
+buttonA.onclick = () => {
+  const name = prompt("What is your name?");
+  alert(`Hello ${name}, nice to see you!`);
+  headingA.textContent = `Welcome ${name}`;
+};
