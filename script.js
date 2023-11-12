@@ -24,8 +24,8 @@ function call() {
   request.onload = function () {
     let reponseObject = request.response;
 
-  //Call pour afficher le tableau
-  showHeroes(reponseObject);
+    //Call pour afficher le tableau
+    showHeroes(reponseObject);
   };
 
 
@@ -40,7 +40,7 @@ function showHeroes(jsonObject) {
 
 
   var tbl = document.getElementsByTagName('table')[0];
- 
+
   tbl.style.width = '100%';
   tbl.setAttribute('border', '1');
   var tbdy = document.createElement('tbody');
@@ -48,7 +48,7 @@ function showHeroes(jsonObject) {
     var tr = document.createElement('tr');
 
     var tdName = document.createElement('td');
-   // tdName.style.border = '1px solid black text-align: center';
+    // tdName.style.border = '1px solid black text-align: center';
     tdName.appendChild(document.createTextNode(jsonObject[i].name));
 
     tr.appendChild(tdName);
@@ -75,8 +75,10 @@ function showHeroes(jsonObject) {
 
 
 
+}
 
-
-
-
+function modifier() {
+  
+  document.getElementById("article").innerHTML = "Hello";
+  document.getElementById('name').style.backgroundColor = 'red';
 }
