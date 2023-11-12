@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+
+}
+
+
+table,
+caption,
+th,
+td {
+
+    border: 2px solid skyblue;
+    width: 510px;
+    align-content: center;
+}
+
+.action-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+button {
+    padding: 10px;
+    border-radius: 15px;
+    margin: 30px;
+}
+
