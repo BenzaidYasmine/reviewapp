@@ -3,7 +3,6 @@ var section = document.querySelector("section");
 
 call();
 
-
 function call() {
   var requestURL =
     "https://benzaidyasmine.github.io/reviewapp/data.json";
@@ -23,21 +22,16 @@ function call() {
 
   request.onload = function () {
     let reponseObject = request.response;
-
     //Call pour afficher le tableau
     showHeroes(reponseObject);
-   
-  
+
   };
-
-
-
 }
 
 
 function showHeroes(jsonObject) {
 
-  alert("tableau :"+jsonObject[0].name);
+  //alert("tableau :"+jsonObject[0].name);
   // console.log("tableau :" + jsonObject); // Hello, world!
 
 
@@ -75,22 +69,68 @@ function showHeroes(jsonObject) {
   }
   tbl.appendChild(tbdy);
 
-console.log('jsonObject: '+jsonObject[0].name)
+
 
 }
+/**************************************************************************/
 
-function modifierr() {
-
-  document.getElementById("article").innerHTML = "Hello";
-  document.getElementById('name').style.backgroundColor = 'red';
+var table = document.getElementById("table"), rIndex;
+console.log("rIndex "+rIndex);
+for (var i = 0; i < table.rows.length; i++) {
+  console.log("table.row[i] : "+table.rows[i]);
+  table.rows[i].onclick = function () {
+    rIndex = this.rowIndex;
+   
+    console.log('row index: '+rIndex);
+    document.getElementById("name").value = this.cells[0].innerHTML;
+    document.getElementById("article").value = this.cells[1].innerHTML;
+    document.getElementById("review").value = this.cells[2].innerHTML;
+    document.getElementById("rating").value = this.cells[3].innerHTML;
+    document.getElementById("refound").value = this.cells[4].innerHTML;
+  };
 }
 
 
-const buttonA = document.querySelector("#update");
-const headingA = document.querySelector("#name");
 
-buttonA.onclick = () => {
-  const name = prompt("What is your name?");
-  alert(`Hello ${name}, nice to see you!`);
-  headingA.textContent = `Welcome ${name}`;
-};
+
+function editRow() {
+  table.rows[rIndex].cells[0].innerHTML = document.getElementById("name").value;
+  table.rows[rIndex].cells[1].innerHTML = document.getElementById("article").value;
+  table.rows[rIndex].cells[2].innerHTML = document.getElementById("review").value;
+  table.rows[rIndex].cells[3].innerHTML = document.getElementById("rating").value;
+  table.rows[rIndex].cells[4].innerHTML = document.getElementById("refound").value;
+}
+
+
+
+
+// Data Update Table Here
+function editTableDisplay() {
+  document.querySelector('.editTable').setAttribute('style', 'display: block;')
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function style() {
+  const buttonA = document.querySelector("#update");
+  const headingA = document.querySelector("#name");
+
+  buttonA.onclick = () => {
+    const name = prompt("What is your name?");
+    alert(`Hello ${name}, nice to see you!`);
+    headingA.textContent = `Welcome ${name}`;
+  }
+}

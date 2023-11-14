@@ -13,24 +13,50 @@
     <section class="container">
         <h1>Review Amazon</h1>
 
-        <table>
+        <table id="table">
             <tr>
-                <th id="name">Intermmédiare</th>
-                <th id="article">Article</th>
-                <th id="review">Review</th>
-                <th id ="rating">Rating</th>
-                <th id="refound">Refound</th>
+                <th id="">Intermmédiare</th>
+                <th id="">Article</th>
+                <th id="">Review</th>
+                <th id="">Rating</th>
+                <th id="">Refound</th>
             </tr>
-
-
+            <tr>
+                <td>Bob</td>
+                <td>cable</td>
+                <td>no</td>
+                <td>yes</td>
+                <td>all</td>
+            </tr>
+            <tr>
+                <td>test</td>
+                <td>vert</td>
+                <td>azerty</td>
+                <td>yes</td>
+                <td>caca</td>
+            </tr>
         </table>
 
-        <div class="action-btn">
-            <button id="update" >Modifier</button>
 
-            <button id="save">Enregistrer</button>
+        <button id="update" onclick="editTableDisplay()" title="click an any cell or row to update">Update Row</button>
+
+        <div class="editTable">
+            <div class="left">Inter: <input name="name" id="name" type="text"></div><br>
+
+            <div class="left">Article : <input name="article" id="article" type="text"></div> <br>
+
+            <div class="left">Review : <input name="review" id="review" type="text"></div> <br>
+
+            <div class="left">Rating :<input name="rating" id="rating" type="text"></div> <br>
+
+            <div class="left">Refound : <input name="refound" id="refound" type="text"></div>
+            
+            <div class="content-btn">
+                <button id="save" onclick="editRow()" title="click here">Save Row</button>
+            </div>
+
+
         </div>
-
     </section>
 
 
